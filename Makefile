@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 15:30:16 by rfelicio          #+#    #+#              #
-#    Updated: 2021/08/22 16:59:07 by rfelicio         ###   ########.fr        #
+#    Updated: 2021/08/22 17:37:25 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SRC				=	$(SRC_DIR)/ft_isalpha.c			\
 					$(SRC_DIR)/ft_lstiter.c			\
 					$(SRC_DIR)/ft_lstmap.c			\
 
-OBJ_DIR			=	.
+MK_OBJ_DIR		=	mkdir -p obj
+OBJ_DIR			=	./obj
 OBJ				=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 RM				=	rm -f
@@ -86,6 +87,7 @@ $(NAME):	$(OBJ)
 			@echo OK!
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+			$(MK_OBJ_DIR)
 			$(CC) $(C_FLAGS) $(INCLUDES) $< -o $@
 
 all:		$(NAME)
