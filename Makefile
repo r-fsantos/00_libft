@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 15:30:16 by rfelicio          #+#    #+#              #
-#    Updated: 2021/08/22 17:37:25 by rfelicio         ###   ########.fr        #
+#    Updated: 2021/08/22 17:45:21 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIB_OPTIM		=	ranlib
 
 LD_FLAGS		=
 
-INCLUDES		=	.
+INCLUDES		=	./include
 
 SRC_DIR			=	./src
 SRC				=	$(SRC_DIR)/ft_isalpha.c			\
