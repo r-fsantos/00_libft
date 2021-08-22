@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 15:30:16 by rfelicio          #+#    #+#              #
-#    Updated: 2021/08/19 18:28:15 by rfelicio         ###   ########.fr        #
+#    Updated: 2021/08/22 16:33:12 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 NAME			=	libft.a
 
 CC				=	gcc
-C_FLAGS			=	-Wall -Wextra -Werror
+C_FLAGS			=	-Wall -Wextra -Werror -c -I
 
 LIB				=	ar rcs
 LIB_OPTIM		=	ranlib
@@ -60,8 +60,7 @@ SRC				=	$(SRC_DIR)/ft_isalpha.c			\
 					$(SRC_DIR)/ft_putstr_fd.c		\
 					$(SRC_DIR)/ft_putendl_fd.c		\
 					$(SRC_DIR)/ft_putnbr_fd.c		\
-	
-SRC_BONUS		=	$(SRC_DIR)/ft_lstnew.c			\
+					$(SRC_DIR)/ft_lstnew.c			\
 					$(SRC_DIR)/ft_lstadd_front.c	\
 					$(SRC_DIR)/ft_lstsize.c			\
 					$(SRC_DIR)/ft_lstlast.c			\
@@ -73,7 +72,6 @@ SRC_BONUS		=	$(SRC_DIR)/ft_lstnew.c			\
 
 OBJ_DIR			=	.
 OBJ				=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
-OBJ_BONUS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_BONUS))
 
 RM				=	rm -f
 
@@ -88,16 +86,10 @@ $(NAME):	$(OBJ)
 			@echo OK!
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-			$(CC) $(C_FLAGS) -c -I $(INCLUDES) $< -o $@
+			$(CC) $(C_FLAGS) $(INCLUDES) $< -o $@
 
 all:		$(NAME)
-			@echo Runnning $(NAME)...
 
-bonus:		$(NAME) $(OBJ_BONUS)
-			$(LIB) $(NAME) $(OBJ_BONUS)
-			$(LIB_OPTIM) $(NAME)
-			@echo Compilling libft bonuses...
-			@echo OK!
 clean:
 			@$(RM) $(OBJ) $(OBJ_BONUS)
 			@echo Cleaning...
@@ -106,7 +98,5 @@ fclean:		clean
 			@$(RM) $(NAME)
 
 re:			fclean all
-
-rebonus:	re bonus
 
 .PHONY:		all clean fclean re
