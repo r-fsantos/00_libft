@@ -6,7 +6,7 @@
 #    By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 15:30:16 by rfelicio          #+#    #+#              #
-#    Updated: 2021/08/22 16:33:12 by rfelicio         ###   ########.fr        #
+#    Updated: 2021/08/22 16:59:07 by rfelicio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LD_FLAGS		=
 
 INCLUDES		=	.
 
-SRC_DIR			=	.
+SRC_DIR			=	./src
 SRC				=	$(SRC_DIR)/ft_isalpha.c			\
 					$(SRC_DIR)/ft_isdigit.c			\
 					$(SRC_DIR)/ft_isalnum.c			\
