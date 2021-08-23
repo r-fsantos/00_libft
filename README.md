@@ -32,6 +32,7 @@ C programming can be very tedious when one doesn’t have access to those highly
 	<img src="grade.png" width="150" height="150"/>
 </h2>
 
+
 ## Content
 `./include/`: Header files;
 
@@ -40,5 +41,7 @@ C programming can be very tedious when one doesn’t have access to those highly
 `./test`: TODO. 
 
 ## How to use
+
+- Dependencies: Clang.
 
 ## License
