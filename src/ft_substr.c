@@ -6,7 +6,7 @@
 /*   By: rfelicio <rfelicio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:38:05 by rfelicio          #+#    #+#             */
-/*   Updated: 2021/08/08 22:12:17 by rfelicio         ###   ########.fr       */
+/*   Updated: 2021/08/24 00:12:28 by rfelicio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,32 @@
 **		RETURN VALUE: The only substr possible to be formed: "\0"
 **		2. size_t len is bigger than ft_strlen(s) an start is correct.
 **		In this case, the len should be redefined.
+**
+** Alternative implementation using other functions from libft
+**	size_t 	i;
+**	char	*str;
+**	size_t	slen;
+**
+**	if (!s)
+**		return (NULL);
+**	i = 0;
+**	slen = 0;
+**	while(s[slen] != '\0')
+**		++slen;
+**	if (!len || start > slen)
+**		len = 0;
+**	if (len > (slen - start))
+**		len = slen - start;
+**	str = (char *)malloc((len + 1) * sizeof(char));
+**	if (!str)
+**		return (NULL);
+**	while (i < len && (start + i) < slen)
+**	{
+**		str[i] = s[start + i];
+**		++i;
+**	}
+**	str[i] = '\0';
+**	return (str);
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
